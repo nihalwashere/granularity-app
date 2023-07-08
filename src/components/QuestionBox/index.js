@@ -12,6 +12,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { OKButton, SubmitButton } from "../CustomButton";
+import LinearScale from "../LinearScale";
+import RatingScale from "../RatingScale";
 import AnswerTextField from "../AnswerTextField";
 import OptionsListDialog from "../OptionsListDialog";
 import ThankYouBox from "../ThankYouBox";
@@ -89,10 +91,7 @@ const QuestionBox = (props) => {
       }
     >
       {!showThankYou && (
-        <div
-          className="question-box-container"
-          style={{ marginTop: answerable ? "5%" : 0 }}
-        >
+        <div className="question-box-container" style={{ marginTop: "5%" }}>
           <div className="question-box-question-number">{number})</div>
           <div className="question-box-question-container">
             <div className="question-box-text-field-container">
@@ -102,7 +101,7 @@ const QuestionBox = (props) => {
                     <Typography
                       style={{
                         whiteSpace: "pre-wrap",
-                        fontSize: 22,
+                        fontSize: 18,
                         fontFamily: "Muli",
                       }}
                       component="span"
@@ -133,7 +132,7 @@ const QuestionBox = (props) => {
                     <Typography
                       style={{
                         whiteSpace: "pre-wrap",
-                        fontSize: 22,
+                        fontSize: 16,
                         fontFamily: "Muli",
                       }}
                       component="span"
@@ -158,7 +157,8 @@ const QuestionBox = (props) => {
 
             {type === QUESTION_TYPE.TEXT ||
             type === QUESTION_TYPE.EMAIL ||
-            type === QUESTION_TYPE.NUMBER ? (
+            type === QUESTION_TYPE.NUMBER ||
+            type === QUESTION_TYPE.WEBSITE ? (
               <div className="question-box-answer-text-field-container">
                 <AnswerTextField
                   onChange={(event) => handleAnswerChange(event.target.value)}
@@ -166,7 +166,7 @@ const QuestionBox = (props) => {
                   placeholder={answerPlaceholder}
                   className="question-box-answer-text-field"
                   disabled={!answerable}
-                  multiline
+                  multiline={type === QUESTION_TYPE.TEXT ? true : false}
                 />
               </div>
             ) : null}
@@ -177,6 +177,26 @@ const QuestionBox = (props) => {
                   Yes
                 </OKButton>
                 <OKButton onClick={() => handleAnswerChange("NO")}>No</OKButton>
+              </div>
+            )}
+
+            {type === QUESTION_TYPE.LINEAR_SCALE && (
+              <div className="question-box-linear-scale-container">
+                <LinearScale
+                  length={10}
+                  handleLinearScale={(scale) => handleAnswerChange(scale)}
+                />
+              </div>
+            )}
+
+            {type === QUESTION_TYPE.RATING && (
+              <div className="question-box-rating-container">
+                <RatingScale
+                  length={10}
+                  rating={answer}
+                  handleRatingScale={(rate) => handleAnswerChange(rate)}
+                  readOnly={!answerable}
+                />
               </div>
             )}
 
@@ -289,7 +309,10 @@ const QuestionBox = (props) => {
               </div>
             )}
 
-            {answerable && type !== QUESTION_TYPE.YES_NO ? (
+            {answerable &&
+            type !== QUESTION_TYPE.YES_NO &&
+            type !== QUESTION_TYPE.LINEAR_SCALE &&
+            type !== QUESTION_TYPE.RATING ? (
               <div className="question-box-button-container">
                 {showSubmit ? (
                   <SubmitButton onClick={handleOK}>Submit</SubmitButton>
@@ -320,17 +343,21 @@ QuestionBox.propTypes = {
   handleQuestionChange: PropTypes.func,
   descriptionValue: PropTypes.string,
   descriptionPlaceholder: PropTypes.string,
-  answer: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  answer: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.number,
+  ]),
   answerPlaceholder: PropTypes.string,
   handleAnswerChange: PropTypes.func.isRequired,
   answerable: PropTypes.bool.isRequired,
   handleDescriptionChange: PropTypes.func,
   optionsList: PropTypes.array,
   createOptionsList: PropTypes.func,
+  validationError: PropTypes.string,
   handleOK: PropTypes.func,
   showSubmit: PropTypes.bool,
   showThankYou: PropTypes.bool,
-  validationError: PropTypes.string,
 };
 
 export default QuestionBox;

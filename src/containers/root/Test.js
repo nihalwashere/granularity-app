@@ -10,7 +10,6 @@ import Spinner from "../../components/Spinner";
 import CannotAccessForm from "../../components/CannotAccessForm";
 import { QUESTION_TYPE } from "../../enums/Questions";
 import { validate } from "../answer-form/helper";
-import { GRANULARITY_WEB_URL } from "../../utils/config";
 import {
   DEFAULT_PAGE_TITLE,
   DEFAULT_PAGE_DESCRIPTION,
@@ -458,7 +457,7 @@ const Test = (props) => {
                           <Link
                             underline="none"
                             color="inherit"
-                            href={GRANULARITY_WEB_URL}
+                            href={process.env.REACT_APP_WEB_URL}
                             target="_blank"
                             rel="noopener"
                           >

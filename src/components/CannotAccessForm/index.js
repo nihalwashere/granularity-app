@@ -2,7 +2,6 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 import ImageAssets from "../../assets/images";
-import { GRANULARITY_WEB_URL } from "../../utils/config";
 import "./styles.css";
 
 const CannotAccessForm = () => {
@@ -37,7 +36,7 @@ const CannotAccessForm = () => {
           <Link
             underline="none"
             color="inherit"
-            href={GRANULARITY_WEB_URL}
+            href={process.env.REACT_APP_WEB_URL}
             rel="noopener"
           >
             Continue to <span style={{ fontWeight: "bold" }}>Granularity</span>

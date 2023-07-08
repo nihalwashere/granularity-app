@@ -12,7 +12,6 @@ import TextField from "@material-ui/core/TextField";
 import Spinner from "../../components/Spinner";
 import { CopyButton } from "../../components/CustomButton";
 import EmbedFormDialog from "../../components/EmbedFormDialog";
-import { GRANULARITY_APP_URL } from "../../utils/config";
 import ImageAssets from "../../assets/images";
 import { EmbedOptions } from "../../enums/Embed";
 import { getPublishedForm } from "../../utils/api";
@@ -25,7 +24,7 @@ const ShareContainer = (props) => {
 
   const formRef = window.location.pathname.split("/")[2];
 
-  const publicLink = `${GRANULARITY_APP_URL}/form/${formRef}`;
+  const publicLink = `${process.env.REACT_APP_APP_URL}/form/${formRef}`;
 
   const [isLoading, setIsLoading] = useState(false);
 

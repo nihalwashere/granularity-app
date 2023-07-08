@@ -18,7 +18,7 @@
 }
 
 .form-builder-left-scrollable-container {
-  max-height: 500px;
+  max-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -75,14 +75,30 @@
 .form-builder-middle-section {
   min-height: 100vh;
   height: 100%;
-  width: 60%;
+  width: 50%;
+}
+
+.form-builder-middle-section-scrollable-container {
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.form-builder-middle-section-scrollable-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.form-builder-middle-section-scrollable-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .form-builder-middle-section-question-container {
-  margin: 5%;
-
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
 }
 
 /* Right Section */

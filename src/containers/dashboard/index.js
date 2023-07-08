@@ -18,10 +18,6 @@ import CreateFormDialog from "../../components/CreateFormDialog";
 import RenameFormDialog from "../../components/RenameFormDialog";
 import DeleteFormDialog from "../../components/DeleteFormDialog";
 import Spinner from "../../components/Spinner";
-import {
-  GRANULARITY_APP_URL,
-  SLACK_WORKSPACE_INVITE_LINK,
-} from "../../utils/config";
 import { deleteForm, getForms, putForm } from "../../utils/api";
 import ImageAssets from "../../assets/images";
 import "./styles.css";
@@ -102,7 +98,9 @@ const DashboardContainer = (props) => {
     newForms[index].formOptionsAnchorEl = null;
 
     if (type === "view") {
-      window.open(`${GRANULARITY_APP_URL}/form/${newForms[index].formRef}`);
+      window.open(
+        `${process.env.REACT_APP_APP_URL}/form/${newForms[index].formRef}`
+      );
     }
 
     if (type === "edit") {
@@ -271,22 +269,6 @@ const DashboardContainer = (props) => {
             <Divider />
 
             <div className="dashboard-left-section-bottom-container">
-              <Divider />
-
-              <div className="dashboard-left-section-tab">
-                <div className="dashboard-left-section-tab-title">
-                  <Link
-                    href={SLACK_WORKSPACE_INVITE_LINK}
-                    color="inherit"
-                    underline="always"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Need help? Join us on Slack!
-                  </Link>
-                </div>
-              </div>
-
               <Divider />
 
               <div className="dashboard-left-section-tab">

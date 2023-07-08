@@ -11,7 +11,6 @@ import { ViewFormButton } from "../../components/CustomButton";
 import { getResponses } from "../../utils/api";
 import { QUESTION_TYPE } from "../../enums/Questions";
 import ImageAssets from "../../assets/images";
-import { GRANULARITY_APP_URL } from "../../utils/config";
 import "./styles.css";
 
 const ResponsesContainer = (props) => {
@@ -115,7 +114,7 @@ const ResponsesContainer = (props) => {
                 {responses.length === 1 ? "response" : "responses"} in total
                 <ViewFormButton
                   endIcon={<OpenInNewIcon />}
-                  href={`${GRANULARITY_APP_URL}/form/${formRef}`}
+                  href={`${process.env.REACT_APP_APP_URL}/form/${formRef}`}
                   target="_blank"
                   rel="noopener"
                 >

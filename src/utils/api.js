@@ -1,16 +1,45 @@
 import axios from "axios";
-import { GRANULARITY_API_BASE_URL_V1 } from "./config";
-import { getDefaultHeaders, processError } from "./common";
+import { GRANULARITY_TOKEN } from "./constants";
+
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE_URL,
+  timeout: 50000,
+});
+
+export const getHeaders = () => ({
+  "x-access-token": localStorage.getItem(GRANULARITY_TOKEN),
+});
+
+export const processError = (error) => {
+  if (error.response) {
+    // client received an error response (5xx, 4xx)
+
+    return error.response.data;
+  }
+
+  if (error.request) {
+    // client never received a response, or request never left
+
+    return {
+      success: false,
+      message: "It's not you, it's us, want to give it another try?",
+    };
+  }
+
+  // anything else
+
+  return {
+    success: false,
+    message: "Something went wrong.",
+  };
+};
 
 export const signUp = async ({ email, password }) => {
   try {
-    const response = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/users/signup`,
-      {
-        email: String(email).trim(),
-        password: String(password).trim(),
-      }
-    );
+    const response = await API.post("/users/signup", {
+      email: String(email).trim(),
+      password: String(password).trim(),
+    });
 
     return response.data;
   } catch (error) {
@@ -21,13 +50,10 @@ export const signUp = async ({ email, password }) => {
 
 export const signIn = async ({ email, password }) => {
   try {
-    const response = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/users/signin`,
-      {
-        email: String(email).trim(),
-        password: String(password).trim(),
-      }
-    );
+    const response = await API.post("/users/signin", {
+      email: String(email).trim(),
+      password: String(password).trim(),
+    });
 
     return response.data;
   } catch (error) {
@@ -38,14 +64,9 @@ export const signIn = async ({ email, password }) => {
 
 export const getUserInfo = async () => {
   try {
-    const response = await axios.get(
-      `${GRANULARITY_API_BASE_URL_V1}/users/info`,
-      {
-        headers: {
-          ...getDefaultHeaders(),
-        },
-      }
-    );
+    const response = await API.get("/users/info", {
+      headers: getHeaders(),
+    });
 
     return response.data;
   } catch (error) {
@@ -56,15 +77,13 @@ export const getUserInfo = async () => {
 
 export const updateAccountInfo = async ({ name }) => {
   try {
-    const response = await axios.put(
-      `${GRANULARITY_API_BASE_URL_V1}/users/account`,
+    const response = await API.put(
+      "/users/account",
       {
         name: String(name).trim(),
       },
       {
-        headers: {
-          ...getDefaultHeaders(),
-        },
+        headers: getHeaders(),
       }
     );
 
@@ -77,14 +96,9 @@ export const updateAccountInfo = async ({ name }) => {
 
 export const getAccountStats = async () => {
   try {
-    const response = await axios.get(
-      `${GRANULARITY_API_BASE_URL_V1}/users/account/stats`,
-      {
-        headers: {
-          ...getDefaultHeaders(),
-        },
-      }
-    );
+    const response = await API.get("/users/account/stats", {
+      headers: getHeaders(),
+    });
 
     return response.data;
   } catch (error) {
@@ -95,15 +109,13 @@ export const getAccountStats = async () => {
 
 export const triggerEmailVerification = async ({ email }) => {
   try {
-    const response = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/users/trigger-email-verification`,
+    const response = await API.post(
+      "/users/trigger-email-verification",
       {
         email: String(email).trim(),
       },
       {
-        headers: {
-          ...getDefaultHeaders(),
-        },
+        headers: getHeaders(),
       }
     );
 
@@ -116,12 +128,9 @@ export const triggerEmailVerification = async ({ email }) => {
 
 export const verifyEmail = async ({ emailToken }) => {
   try {
-    const response = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/users/verify-email`,
-      {
-        emailToken,
-      }
-    );
+    const response = await API.post("/users/verify-email", {
+      emailToken,
+    });
 
     return response.data;
   } catch (error) {
@@ -136,17 +145,15 @@ export const changePassword = async ({
   confirmNewPassword,
 }) => {
   try {
-    const response = await axios.put(
-      `${GRANULARITY_API_BASE_URL_V1}/users/change-password`,
+    const response = await API.put(
+      "/users/change-password",
       {
         oldPassword: String(oldPassword).trim(),
         newPassword: String(newPassword).trim(),
         confirmNewPassword: String(confirmNewPassword).trim(),
       },
       {
-        headers: {
-          ...getDefaultHeaders(),
-        },
+        headers: getHeaders(),
       }
     );
 
@@ -159,12 +166,9 @@ export const changePassword = async ({
 
 export const sendPasswordResetInstructions = async ({ email }) => {
   try {
-    const response = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/users/send-password-reset-instructions`,
-      {
-        email: String(email).trim(),
-      }
-    );
+    const response = await API.post("/users/send-password-reset-instructions", {
+      email: String(email).trim(),
+    });
 
     return response.data;
   } catch (error) {
@@ -175,12 +179,9 @@ export const sendPasswordResetInstructions = async ({ email }) => {
 
 export const checkResetPasswordLinkExpiry = async ({ token }) => {
   try {
-    const response = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/users/check-reset-password-link-expiry`,
-      {
-        token,
-      }
-    );
+    const response = await API.post("/users/check-reset-password-link-expiry", {
+      token,
+    });
 
     return response.data;
   } catch (error) {
@@ -195,14 +196,11 @@ export const resetPassword = async ({
   confirmNewPassword,
 }) => {
   try {
-    const response = await axios.put(
-      `${GRANULARITY_API_BASE_URL_V1}/users/reset-password`,
-      {
-        email: String(email).trim(),
-        newPassword: String(newPassword).trim(),
-        confirmNewPassword: String(confirmNewPassword).trim(),
-      }
-    );
+    const response = await API.put("/users/reset-password", {
+      email: String(email).trim(),
+      newPassword: String(newPassword).trim(),
+      confirmNewPassword: String(confirmNewPassword).trim(),
+    });
 
     return response.data;
   } catch (error) {
@@ -213,10 +211,8 @@ export const resetPassword = async ({
 
 export const getForms = async () => {
   try {
-    const response = await axios.get(`${GRANULARITY_API_BASE_URL_V1}/forms/`, {
-      headers: {
-        ...getDefaultHeaders(),
-      },
+    const response = await API.get("/forms", {
+      headers: getHeaders(),
     });
 
     return response.data;
@@ -228,14 +224,9 @@ export const getForms = async () => {
 
 export const getForm = async ({ formRef }) => {
   try {
-    const response = await axios.get(
-      `${GRANULARITY_API_BASE_URL_V1}/forms/${formRef}`,
-      {
-        headers: {
-          ...getDefaultHeaders(),
-        },
-      }
-    );
+    const response = await API.get(`/forms/${formRef}`, {
+      headers: getHeaders(),
+    });
 
     return response.data;
   } catch (error) {
@@ -246,9 +237,7 @@ export const getForm = async ({ formRef }) => {
 
 export const getPublishedForm = async ({ formRef }) => {
   try {
-    const response = await axios.get(
-      `${GRANULARITY_API_BASE_URL_V1}/forms/published/${formRef}`
-    );
+    const response = await API.get(`/forms/published/${formRef}`);
 
     return response.data;
   } catch (error) {
@@ -266,8 +255,8 @@ export const putForm = async ({
   customMetadata = null,
 }) => {
   try {
-    const response = await axios.put(
-      `${GRANULARITY_API_BASE_URL_V1}/forms/`,
+    const response = await API.put(
+      "/forms",
       {
         title: title ? String(title).trim() : title,
         formRef,
@@ -277,9 +266,7 @@ export const putForm = async ({
         customMetadata,
       },
       {
-        headers: {
-          ...getDefaultHeaders(),
-        },
+        headers: getHeaders(),
       }
     );
 
@@ -292,13 +279,11 @@ export const putForm = async ({
 
 export const putPublishForm = async ({ formRef, title, questions }) => {
   try {
-    const response = await axios.put(
-      `${GRANULARITY_API_BASE_URL_V1}/forms/publish`,
+    const response = await API.put(
+      "/forms/publish",
       { formRef, title, questions },
       {
-        headers: {
-          ...getDefaultHeaders(),
-        },
+        headers: getHeaders(),
       }
     );
 
@@ -311,14 +296,9 @@ export const putPublishForm = async ({ formRef, title, questions }) => {
 
 export const deleteForm = async ({ formRef }) => {
   try {
-    const response = await axios.delete(
-      `${GRANULARITY_API_BASE_URL_V1}/forms/${formRef}`,
-      {
-        headers: {
-          ...getDefaultHeaders(),
-        },
-      }
-    );
+    const response = await API.delete(`/forms/${formRef}`, {
+      headers: getHeaders(),
+    });
 
     return response.data;
   } catch (error) {
@@ -333,17 +313,15 @@ export const putCustomMetadataForForm = async ({
   description = null,
 }) => {
   try {
-    const response = await axios.put(
-      `${GRANULARITY_API_BASE_URL_V1}/forms/custom-metadata`,
+    const response = await API.put(
+      "/forms/custom-metadata",
       {
         formRef,
         title: title ? String(title).trim() : title,
         description: description ? String(description).trim() : description,
       },
       {
-        headers: {
-          ...getDefaultHeaders(),
-        },
+        headers: getHeaders(),
       }
     );
 
@@ -356,10 +334,11 @@ export const putCustomMetadataForForm = async ({
 
 export const postResponse = async ({ formRef, responseRef, response }) => {
   try {
-    const result = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/responses/`,
-      { formRef, responseRef, response }
-    );
+    const result = await API.post("/responses", {
+      formRef,
+      responseRef,
+      response,
+    });
 
     return result.data;
   } catch (error) {
@@ -370,14 +349,9 @@ export const postResponse = async ({ formRef, responseRef, response }) => {
 
 export const getInsights = async ({ formRef }) => {
   try {
-    const result = await axios.get(
-      `${GRANULARITY_API_BASE_URL_V1}/insights/${formRef}`,
-      {
-        headers: {
-          ...getDefaultHeaders(),
-        },
-      }
-    );
+    const result = await API.get(`/insights/${formRef}`, {
+      headers: getHeaders(),
+    });
 
     return result.data;
   } catch (error) {
@@ -388,10 +362,7 @@ export const getInsights = async ({ formRef }) => {
 
 export const postOpenEvent = async ({ formRef }) => {
   try {
-    const result = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/insights/events/open`,
-      { formRef }
-    );
+    const result = await API.post("/insights/events/open", { formRef });
 
     return result.data;
   } catch (error) {
@@ -402,10 +373,7 @@ export const postOpenEvent = async ({ formRef }) => {
 
 export const postStartEvent = async ({ formRef }) => {
   try {
-    const result = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/insights/events/start`,
-      { formRef }
-    );
+    const result = await API.post("/insights/events/start", { formRef });
 
     return result.data;
   } catch (error) {
@@ -416,10 +384,7 @@ export const postStartEvent = async ({ formRef }) => {
 
 export const postCompleteEvent = async ({ formRef }) => {
   try {
-    const result = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/insights/events/complete`,
-      { formRef }
-    );
+    const result = await API.post("/insights/events/complete", { formRef });
 
     return result.data;
   } catch (error) {
@@ -430,10 +395,10 @@ export const postCompleteEvent = async ({ formRef }) => {
 
 export const postSeeEvent = async ({ formRef, seenQuestionId }) => {
   try {
-    const result = await axios.post(
-      `${GRANULARITY_API_BASE_URL_V1}/insights/events/see`,
-      { formRef, seenQuestionId }
-    );
+    const result = await API.post("/insights/events/see", {
+      formRef,
+      seenQuestionId,
+    });
 
     return result.data;
   } catch (error) {
@@ -444,14 +409,9 @@ export const postSeeEvent = async ({ formRef, seenQuestionId }) => {
 
 export const getResponses = async ({ formRef }) => {
   try {
-    const result = await axios.get(
-      `${GRANULARITY_API_BASE_URL_V1}/responses/${formRef}`,
-      {
-        headers: {
-          ...getDefaultHeaders(),
-        },
-      }
-    );
+    const result = await API.get(`/responses/${formRef}`, {
+      headers: getHeaders(),
+    });
 
     return result.data;
   } catch (error) {

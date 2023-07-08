@@ -2,33 +2,17 @@
   width: 100%;
 }
 
-.question-box-root-scrollable-container {
-  width: 100%;
-  max-height: 400px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.question-box-root-scrollable-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.question-box-root-scrollable-container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
 .question-box-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  margin-top: 5%;
 }
 
 .question-box-question-number {
   font-family: Muli;
-  font-size: 24px;
+  font-size: 18px;
   color: #66b2b2;
 
   width: 8%;
@@ -48,7 +32,7 @@
 }
 
 .question-box-question-value {
-  font-size: 22px;
+  font-size: 18px;
   font-family: Muli;
 }
 
@@ -57,9 +41,13 @@
 }
 
 .question-box-text-field .MuiInputBase-input {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 30px;
   font-family: Muli;
+}
+
+.question-box-text-field .MuiInputBase-multiline {
+  padding: 0;
 }
 
 .question-box-description-text-field-container {
@@ -72,7 +60,7 @@
 }
 
 .question-box-description-value {
-  font-size: 18px;
+  font-size: 16px;
   font-family: Muli;
 }
 
@@ -87,7 +75,7 @@
 }
 
 .question-box-description-text-field .MuiInputBase-input {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
   font-family: Muli;
 }
@@ -108,8 +96,8 @@
 }
 
 .question-box-answer-text-field .MuiInputBase-input {
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 20px;
+  line-height: 30px;
   font-family: Muli;
 }
 
@@ -119,6 +107,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.question-box-linear-scale-container {
+  width: 100%;
+}
+
+.question-box-rating-container {
+  width: 100%;
+}
+
+.question-box-phone-number-container {
+  width: 100%;
 }
 
 .date-text-field .MuiInput-underline:after {
@@ -135,7 +135,7 @@
 
 .question-box-drop-down-input-select-field .MuiInputBase-input {
   font-family: Muli;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .question-box-drop-down-input-select-field .MuiInput-underline:after {

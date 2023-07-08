@@ -4,7 +4,6 @@ import Link from "@material-ui/core/Link";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import { BannerType } from "../../enums/Banner";
-// import { GRANULARITY_WEB_URL } from "../../utils/config";
 import "./styles.css";
 
 const Banner = (props) => {

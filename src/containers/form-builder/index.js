@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { useSnackbar } from "notistack";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -28,7 +27,6 @@ import AutoSave from "../../components/AutoSave";
 import PublishFormDialog from "../../components/PublishFormDialog";
 import PreviewFormDialog from "../../components/PreviewFormDialog";
 import Spinner from "../../components/Spinner";
-import { GRANULARITY_APP_URL } from "../../utils/config";
 import {
   QUESTION_TYPE,
   QUESTION_TYPES_OPTIONS,
@@ -36,12 +34,7 @@ import {
 } from "../../enums/Questions";
 import { FORM_PUBLISH_STATUS } from "../../enums/FormPublishStatus";
 import { truncateString } from "../../utils/common";
-import {
-  DEFAULT_PAGE_TITLE,
-  DEFAULT_PAGE_DESCRIPTION,
-} from "../../utils/constants";
 import { getForm, putForm, putPublishForm } from "../../utils/api";
-
 import "./styles.css";
 
 const QUESTION_OPTIONS = [
@@ -63,7 +56,7 @@ const FormBuilderContainer = (props) => {
 
   const formRef = window.location.pathname.split("/")[2];
 
-  const publicLink = `${GRANULARITY_APP_URL}/form/${formRef}`;
+  const publicLink = `${process.env.REACT_APP_APP_URL}/form/${formRef}`;
 
   const { enqueueSnackbar } = useSnackbar();
 
@@ -125,8 +118,9 @@ const FormBuilderContainer = (props) => {
 
     if (publishStatus !== FORM_PUBLISH_STATUS.PUBLISH) {
       setPublishStatus(FORM_PUBLISH_STATUS.PUBLISH);
-      shouldPublish(true);
     }
+
+    setShouldPublish(true);
   };
 
   const handleQuestionChange = (questionId, value) => {
@@ -501,10 +495,6 @@ const FormBuilderContainer = (props) => {
           questions: [defaultQuestion],
           isEmailNotificationEnabled: true,
           shouldPublish: true,
-          customMetadata: {
-            title: DEFAULT_PAGE_TITLE,
-            description: DEFAULT_PAGE_DESCRIPTION,
-          },
         });
 
         if (response && response.success && response.data) {
@@ -558,15 +548,8 @@ const FormBuilderContainer = (props) => {
     setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
-  // console.log("selectedQuestion : ", selectedQuestion);
-
   return (
     <div>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Granularity | Form Builder</title>
-      </Helmet>
-
       {isLoading ? (
         <div className="spinner-container">
           <Spinner loading={isLoading} />
@@ -705,48 +688,41 @@ const FormBuilderContainer = (props) => {
 
           <div className="form-builder-middle-section">
             {/* Form Builder */}
-            <div className="form-builder-middle-section-question-container">
-              {selectedQuestion && selectedQuestion.id && (
+            <div className="form-builder-middle-section-question-container form-builder-middle-section-scrollable-container">
+              {questions.map((question) => (
                 <QuestionBox
-                  id={selectedQuestion.id}
-                  type={selectedQuestion.type}
-                  number={selectedQuestion.number}
-                  isRequired={selectedQuestion.isRequired}
-                  questionValue={selectedQuestion.questionValue}
-                  questionPlaceholder={selectedQuestion.questionPlaceholder}
+                  key={question.id}
+                  id={question.id}
+                  type={question.type}
+                  number={question.number}
+                  isRequired={question.isRequired}
+                  questionValue={question.questionValue}
+                  questionPlaceholder={question.questionPlaceholder}
                   handleQuestionChange={(event) =>
-                    handleQuestionChange(
-                      selectedQuestion.id,
-                      event.target.value
-                    )
+                    handleQuestionChange(question.id, event.target.value)
                   }
-                  descriptionValue={selectedQuestion.descriptionValue}
-                  descriptionPlaceholder={
-                    selectedQuestion.descriptionPlaceholder
-                  }
-                  answer={selectedQuestion.answer}
-                  answerPlaceholder={selectedQuestion.answerPlaceholder}
+                  descriptionValue={question.descriptionValue}
+                  descriptionPlaceholder={question.descriptionPlaceholder}
+                  answer={question.answer}
+                  answerPlaceholder={question.answerPlaceholder}
                   handleAnswerChange={(value, optionIndex = null) =>
                     handleAnswerChange(
-                      selectedQuestion.id,
-                      selectedQuestion.type,
+                      question.id,
+                      question.type,
                       value,
                       optionIndex
                     )
                   }
                   answerable={false}
                   handleDescriptionChange={(event) =>
-                    handleDescriptionChange(
-                      selectedQuestion.id,
-                      event.target.value
-                    )
+                    handleDescriptionChange(question.id, event.target.value)
                   }
-                  optionsList={selectedQuestion.options}
+                  optionsList={question.options}
                   createOptionsList={(payload) =>
-                    createOptionsList(selectedQuestion.id, payload)
+                    createOptionsList(question.id, payload)
                   }
                 />
-              )}
+              ))}
             </div>
           </div>
 

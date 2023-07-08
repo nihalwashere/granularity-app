@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { nanoid } from "nanoid";
 import Button from "@material-ui/core/Button";
 import Slide from "@material-ui/core/Slide";
-import Link from "@material-ui/core/Link";
 import QuestionBox from "../../components/QuestionBox";
 import Spinner from "../../components/Spinner";
 import CannotAccessForm from "../../components/CannotAccessForm";
 import { QUESTION_TYPE } from "../../enums/Questions";
 import { validate } from "./helper";
-import { GRANULARITY_WEB_URL } from "../../utils/config";
-import {
-  DEFAULT_PAGE_TITLE,
-  DEFAULT_PAGE_DESCRIPTION,
-} from "../../utils/constants";
 import {
   getPublishedForm,
   postOpenEvent,
@@ -270,7 +263,11 @@ const AnswerFormContainer = (props) => {
 
     setSelectedQuestion({ ...questions[questionIndex] });
 
-    if (questionType === QUESTION_TYPE.YES_NO) {
+    if (
+      questionType === QUESTION_TYPE.YES_NO ||
+      questionType === QUESTION_TYPE.LINEAR_SCALE ||
+      questionType === QUESTION_TYPE.RATING
+    ) {
       await handleNext();
     }
   };
@@ -314,12 +311,6 @@ const AnswerFormContainer = (props) => {
 
   return (
     <div>
-      <Helmet>
-        <title>{DEFAULT_PAGE_TITLE}</title>
-        <meta property="og:image" content="%PUBLIC_URL%/og_image.svg" />
-        <meta property="og:description" content={DEFAULT_PAGE_DESCRIPTION} />
-      </Helmet>
-
       {isLoading ? (
         <div className="spinner-container">
           <Spinner loading={isLoading} />
@@ -392,6 +383,7 @@ const AnswerFormContainer = (props) => {
                                 backgroundColor: "#66b2b2d1",
                               },
                               textTransform: "none",
+                              marginRight: 20,
                             }}
                           >
                             Prev
@@ -414,34 +406,6 @@ const AnswerFormContainer = (props) => {
                             Next
                           </Button>
                         </div>
-
-                        <Button
-                          variant="contained"
-                          style={{
-                            width: 190,
-                            backgroundColor: "#66b2b2",
-                            color: "#ffffff",
-                            fontFamily: "Muli",
-                            fontSize: 14,
-                            "&:hover": {
-                              backgroundColor: "#66b2b2d1",
-                            },
-                            textTransform: "none",
-                          }}
-                        >
-                          <Link
-                            underline="none"
-                            color="inherit"
-                            href={GRANULARITY_WEB_URL}
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            Crafted in{" "}
-                            <span style={{ fontWeight: "bold" }}>
-                              Granularity
-                            </span>
-                          </Link>
-                        </Button>
                       </div>
                     </div>
                   )}

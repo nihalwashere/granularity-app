@@ -1,8 +1,4 @@
 import { EmbedType, EmbedLayoutType } from "../../enums/Embed";
-import {
-  GRANULARITY_APP_URL,
-  GRANULARITY_EMBED_SCRIPT_URL,
-} from "../../utils/config";
 
 const getIframeEmbedCode = ({ width, height, formRef, isFullScreen }) => {
   if (!isFullScreen) {
@@ -37,7 +33,7 @@ const getIframeEmbedCode = ({ width, height, formRef, isFullScreen }) => {
             height="${height}"
             frameborder="0"
             allow="camera; microphone; autoplay; encrypted-media;"
-            src="${GRANULARITY_APP_URL}/form/${formRef}"
+            src="${process.env.REACT_APP_APP_URL}/form/${formRef}"
           ></iframe>
         </body>
       </html>`;
@@ -74,7 +70,7 @@ const getIframeEmbedCode = ({ width, height, formRef, isFullScreen }) => {
           height="100%"
           frameborder="0"
           allow="camera; microphone; autoplay; encrypted-media;"
-          src="${GRANULARITY_APP_URL}/form/${formRef}"
+          src="${process.env.REACT_APP_APP_URL}/form/${formRef}"
         ></iframe>
       </body>
     </html>`;
@@ -90,7 +86,7 @@ const getJavaScriptEmbedCode = ({
   const mapper = {
     [EmbedLayoutType.STANDARD]: () => {
       if (!isFullScreen) {
-        return `<script SameSite="None; Secure" src="${GRANULARITY_EMBED_SCRIPT_URL}"></script>
+        return `<script SameSite="None; Secure" src="${process.env.REACT_APP_EMBED_SCRIPT_URL}"></script>
 <div id="granularity-container" style="width: ${width}; height: ${height}"></div>    
 <script>
     Granularity.Container({
@@ -100,7 +96,7 @@ const getJavaScriptEmbedCode = ({
 </script>`;
       }
 
-      return `<script SameSite="None; Secure" src="${GRANULARITY_EMBED_SCRIPT_URL}"></script>
+      return `<script SameSite="None; Secure" src="${process.env.REACT_APP_EMBED_SCRIPT_URL}"></script>
 <div id="granularity-container" style="width: 100%; height: 100vh"></div>
 <script>
     Granularity.Container({
@@ -110,7 +106,7 @@ const getJavaScriptEmbedCode = ({
 </script>`;
     },
     [EmbedLayoutType.POPUP]:
-      () => `<script SameSite="None; Secure" src="${GRANULARITY_EMBED_SCRIPT_URL}"></script>
+      () => `<script SameSite="None; Secure" src="${process.env.REACT_APP_EMBED_SCRIPT_URL}"></script>
 <script>
     const granularity = Granularity.Popup({
         formId: "${formRef}",
@@ -151,7 +147,7 @@ const getReactJSEmbedCode = ({
                 if (!existingScript) {
                     const script = document.createElement("script");
           
-                    script.src = "${GRANULARITY_EMBED_SCRIPT_URL}";
+                    script.src = "${process.env.REACT_APP_EMBED_SCRIPT_URL}";
                     script.id = "granularity-embed-lib";
           
                     document.body.appendChild(script);
@@ -194,7 +190,7 @@ export default GranularityForm;`;
               if (!existingScript) {
                 const script = document.createElement("script");
       
-                script.src = "${GRANULARITY_EMBED_SCRIPT_URL}";
+                script.src = "${process.env.REACT_APP_EMBED_SCRIPT_URL}";
                 script.id = "granularity-embed-lib";
       
                 document.body.appendChild(script);
@@ -236,7 +232,7 @@ export default GranularityForm;`;
               if (!existingScript) {
                 const script = document.createElement("script");
       
-                script.src = "${GRANULARITY_EMBED_SCRIPT_URL}";
+                script.src = "${process.env.REACT_APP_EMBED_SCRIPT_URL}";
                 script.id = "granularity-embed-lib";
       
                 document.body.appendChild(script);

@@ -15,7 +15,6 @@ import Spinner from "../../components/Spinner";
 import { ViewFormButton } from "../../components/CustomButton";
 import { getInsights } from "../../utils/api";
 import { QUESTION_TYPES_OPTIONS } from "../../enums/Questions";
-import { GRANULARITY_APP_URL } from "../../utils/config";
 import "./styles.css";
 
 const StyledTableCell = withStyles((theme) => ({
@@ -120,7 +119,7 @@ const InsightsContainer = (props) => {
                 Overview
                 <ViewFormButton
                   endIcon={<OpenInNewIcon />}
-                  href={`${GRANULARITY_APP_URL}/form/${formRef}`}
+                  href={`${process.env.REACT_APP_APP_URL}/form/${formRef}`}
                   target="_blank"
                   rel="noopener"
                 >

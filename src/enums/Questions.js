@@ -7,6 +7,10 @@ export const QUESTION_TYPE = {
   DROPDOWN: "dropdown",
   EMAIL: "email",
   MULTIPLE_CHOICE: "multiple_choice",
+  WEBSITE: "website",
+  LINEAR_SCALE: "linear_scale",
+  RATING: "rating",
+  // PHONE_NUMBER: "phone_number",
 };
 
 export const QUESTION_TYPES_OPTIONS = [
@@ -58,6 +62,30 @@ export const QUESTION_TYPES_OPTIONS = [
     description: "",
     image: "",
   },
+  {
+    type: QUESTION_TYPE.WEBSITE,
+    name: "Website",
+    description: "",
+    image: "",
+  },
+  {
+    type: QUESTION_TYPE.LINEAR_SCALE,
+    name: "Linear Scale",
+    description: "",
+    image: "",
+  },
+  {
+    type: QUESTION_TYPE.RATING,
+    name: "Rating",
+    description: "",
+    image: "",
+  },
+  // {
+  //   type: QUESTION_TYPE.PHONE_NUMBER,
+  //   name: "Phone Number",
+  //   description: "",
+  //   image: "",
+  // },
 ];
 
 export const QUESTION_TYPE_DEFAULTS = [
@@ -156,4 +184,50 @@ export const QUESTION_TYPE_DEFAULTS = [
     validationError: null,
     questionOptionsAnchorEl: null,
   },
+  {
+    type: QUESTION_TYPE.WEBSITE,
+    questionValue: "",
+    questionPlaceholder: "Your question comes here...",
+    descriptionValue: "",
+    descriptionPlaceholder: "Description (optional)",
+    answerPlaceholder: "https://",
+    isRequired: false,
+    answer: "",
+    validationError: null,
+    questionOptionsAnchorEl: null,
+  },
+  {
+    type: QUESTION_TYPE.LINEAR_SCALE,
+    questionValue: "",
+    questionPlaceholder: "Your question comes here...",
+    descriptionValue: "",
+    descriptionPlaceholder: "Description (optional)",
+    isRequired: false,
+    answer: "",
+    validationError: null,
+    questionOptionsAnchorEl: null,
+  },
+  {
+    type: QUESTION_TYPE.RATING,
+    questionValue: "",
+    questionPlaceholder: "Your question comes here...",
+    descriptionValue: "",
+    descriptionPlaceholder: "Description (optional)",
+    isRequired: false,
+    answer: null,
+    validationError: null,
+    questionOptionsAnchorEl: null,
+  },
+  // {
+  //   type: QUESTION_TYPE.PHONE_NUMBER,
+  //   questionValue: "",
+  //   questionPlaceholder: "Your question comes here...",
+  //   descriptionValue: "",
+  //   descriptionPlaceholder: "Description (optional)",
+  //   answerPlaceholder: "Type your answer here...",
+  //   isRequired: false,
+  //   answer: "",
+  //   validationError: null,
+  //   questionOptionsAnchorEl: null,
+  // },
 ];

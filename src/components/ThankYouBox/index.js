@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
-import { GRANULARITY_WEB_URL } from "../../utils/config";
 
 const ThankYouBox = () => {
   return (
@@ -48,7 +47,7 @@ const ThankYouBox = () => {
           <Link
             underline="none"
             color="inherit"
-            href={GRANULARITY_WEB_URL}
+            href={process.env.REACT_APP_WEB_URL}
             target="_blank"
             rel="noopener"
           >
