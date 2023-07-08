@@ -1,0 +1,121 @@
+.profile-side-bar-top-container {
+  background-color: #ffffff;
+  margin-top: 10%;
+  margin-bottom: 20%;
+}
+
+.profile-side-bar-avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-side-bar-bottom-container {
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+}
+
+.profile-side-bar-name-text {
+  height: 30px;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #66b2b2;
+  margin-top: 20px;
+}
+
+.profile-side-bar-stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15%;
+}
+
+.profile-side-bar-stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: Muli;
+}
+
+.profile-side-bar-stat-count {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 5px;
+  color: #66b2b2;
+}
+
+.profile-side-bar-center-bar {
+  width: 3px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: #66b2b2;
+}
+
+.profile-side-bar-cheers-redeemable-stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: Muli;
+
+  margin-top: 20px;
+}
+
+.profile-side-bar-cheers-redeemable-stat-count {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 5px;
+  color: #66b2b2;
+}
+
+.profile-side-bar-navigation-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.profile-side-bar-navigation-list-first-item {
+  box-shadow: 0 3px 9px 0 #707070;
+}
+
+.profile-side-bar-navigation-list-item-img-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.profile-side-bar-navigation-list-item-img {
+  width: 18px;
+  height: 18px;
+}
+
+.profile-side-bar-navigation-list-item-text {
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #464444;
+  margin-left: 20px;
+}
+
+.profile-side-bar-navigation-list-right-arrow-img {
+  margin-right: 8%;
+}

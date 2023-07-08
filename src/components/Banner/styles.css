@@ -1,0 +1,38 @@
+.banner-root-container {
+  min-width: 0px;
+  min-height: 0px;
+  flex-shrink: 0;
+  overflow: hidden;
+  flex-basis: 0px;
+  animation: 0.15s ease-in-out 1s 1 normal forwards running banner;
+}
+
+.banner-container {
+  position: relative;
+  background-color: rgb(230, 243, 247);
+  min-width: 1024px;
+  padding: 8px;
+  min-height: 30px;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Muli;
+}
+
+@keyframes banner {
+  0% {
+    flex-basis: 0px;
+  }
+
+  95% {
+    flex-basis: 30px;
+  }
+
+  100% {
+    flex-basis: auto;
+  }
+}

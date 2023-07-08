@@ -1,0 +1,156 @@
+.dashboard-root-container {
+  display: flex;
+}
+
+.dashboard-section-left {
+  width: 25%;
+  min-height: 100vh;
+  height: 100%;
+
+  margin-top: 0.1%;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fbfbfb;
+}
+
+.dashboard-left-section-tab {
+  display: flex;
+  align-items: center;
+
+  height: 50px;
+
+  margin-left: 5%;
+}
+
+.dashboard-left-section-tab-title {
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.dashboard-left-section-tab-description {
+  font-family: Muli;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #707070;
+  margin-top: 2%;
+}
+
+.dashboard-left-section-bottom-container {
+  position: fixed;
+  bottom: 0;
+
+  width: 25%;
+}
+
+.dashboard-section-right {
+  width: 75%;
+
+  background-color: #f0f0f0b3;
+}
+
+.dashboard-create-new-form-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-create-new-form-button {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-empty-container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard-empty-header {
+  font-family: Muli;
+  font-weight: 900;
+  font-size: 32px;
+}
+
+.dashboard-empty-illustration-container {
+  width: 30%;
+  height: 30%;
+
+  margin-top: 2%;
+}
+
+.dashboard-form-cards-grid-container {
+  width: 90%;
+
+  margin-top: 5%;
+}
+
+.dashboard-form-card-container {
+  height: 120px;
+  width: 200px;
+
+  padding: 3%;
+
+  margin-bottom: 3%;
+  margin-right: 3%;
+}
+
+.dashboard-form-card-container:hover {
+  background-color: #edf2f7;
+}
+
+.dashboard-form-card-title-container {
+  height: 80px;
+
+  cursor: pointer;
+}
+
+.dashboard-form-card-title {
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dashboard-form-response-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-form-response {
+  font-family: Muli;
+  font-size: 14px;
+}
+
+.dashboard-form-options-menu-item {
+  width: 200px;
+}
+
+.dashboard-form-options-list-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,186 @@
+.responses-root-container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: #f0f0f0b3;
+}
+
+.responses-container {
+  width: 80%;
+}
+
+.responses-total-count-container {
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: bold;
+
+  margin-top: 3%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.responses-container-top-divider {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.responses-empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 80%;
+}
+
+.responses-empty-header-container {
+  font-family: Muli;
+  font-size: 24px;
+}
+
+.responses-empty-description-container {
+  font-family: Muli;
+  font-size: 18px;
+}
+
+.responses-empty-illustration-container {
+  width: 50%;
+  height: 50%;
+
+  margin-top: 3%;
+}
+
+.responses-content-container {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 5%;
+}
+
+.responses-left-container {
+  width: 35%;
+}
+
+.responses-left-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.responses-left-list-card {
+  height: 50px;
+  width: 100%;
+
+  margin-bottom: 2%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: Muli;
+  font-size: 16px;
+}
+
+.responses-left-list-card-top-divider {
+  margin-bottom: 5%;
+}
+
+.responses-left-list-card-selected {
+  background-color: #c7ebeb78;
+}
+
+.responses-left-list-card-text {
+  width: fit-content;
+
+  font-family: Muli;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.responses-right-container {
+  width: 100%;
+}
+
+.responses-right-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.responses-right-list-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.responses-right-list-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.responses-right-list-container-header-container {
+  display: flex;
+  justify-content: center;
+
+  width: 90%;
+}
+
+.responses-right-list-container-header {
+  margin-top: 3%;
+  margin-bottom: 3%;
+
+  width: 100%;
+
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.responses-right-list-card-container {
+  height: 100%;
+  width: 90%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 5%;
+}
+
+.responses-right-list-card {
+}
+
+.responses-right-list-card-question {
+  margin-bottom: 2%;
+
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.responses-right-list-card-answer {
+  font-family: Muli;
+  font-size: 16px;
+}
+
+.responses-right-list-card-no-response {
+  font-family: Muli;
+  font-size: 16px;
+  color: #4f4747;
+}
+
+.responses-right-list-card-statement-no-response {
+  font-family: Muli;
+  font-size: 12px;
+  color: #4f4747;
+}

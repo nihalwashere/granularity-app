@@ -1,0 +1,154 @@
+.embed-form-dialog-root-container {
+  display: flex;
+  justify-content: center;
+}
+
+.embed-form-container {
+  width: 80%;
+
+  margin-top: 1%;
+}
+
+.embed-form-settings-container {
+  margin-top: 2%;
+}
+
+.embed-form-settings-full-screen-switch-container {
+  width: 30%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 2%;
+}
+
+.embed-form-full-screen-switch .MuiSwitch-colorSecondary.Mui-checked {
+  color: #66b2b2;
+}
+
+.embed-form-full-screen-switch
+  .MuiSwitch-colorSecondary.Mui-checked
+  + .MuiSwitch-track {
+  background-color: #66b2b2;
+}
+
+.embed-form-window-settings-text {
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.embed-form-window-full-screen-text {
+  font-family: Muli;
+  font-size: 16px;
+}
+
+.embed-form-settings-layout-switch-container {
+  width: 30%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 2%;
+}
+
+.embed-form-layout-switch .MuiSwitch-colorSecondary.Mui-checked {
+  color: #66b2b2;
+}
+
+.embed-form-layout-switch
+  .MuiSwitch-colorSecondary.Mui-checked
+  + .MuiSwitch-track {
+  background-color: #66b2b2;
+}
+
+.embed-form-window-settings-text {
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.embed-form-window-layout-text {
+  font-family: Muli;
+  font-size: 16px;
+}
+
+.embed-form-setting-container {
+  width: 30%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 3%;
+}
+
+.embed-form-setting-header {
+  font-family: Muli;
+  font-size: 16px;
+}
+
+.embed-form-settings-input-text-field .MuiOutlinedInput-root {
+  width: 80px;
+  height: 40px;
+}
+
+.embed-form-settings-input-text-field
+  .MuiOutlinedInput-root.Mui-focused
+  fieldset {
+  border-color: #66b2b2;
+}
+
+.embed-form-settings-input-text-field .MuiOutlinedInput-input {
+  font-size: 16px;
+  font-family: Muli;
+}
+
+.embed-form-settings-input-select-field {
+  width: 80px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 0.5px #cbcbcb;
+  font-size: 14px;
+  padding: 10px 26px 10px 12px;
+}
+
+.embed-form-settings-input-select-field .MuiInputBase-root {
+  height: 40px;
+  font-family: Muli;
+}
+
+.embed-form-settings-input-select-field
+  .MuiOutlinedInput-root.Mui-focused
+  fieldset {
+  border-radius: 4px;
+  border-color: #66b2b2;
+}
+
+.embed-form-instructions-container {
+  margin-top: 2%;
+
+  font-family: Muli;
+  font-size: 16px;
+}
+
+.embed-form-code-container {
+  margin-top: 2%;
+}
+
+.embed-form-notion-steps-header {
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: bold;
+
+  margin-bottom: 1%;
+}
+
+.embed-form-notion-step-text {
+  font-family: Muli;
+  font-size: 16px;
+
+  margin-bottom: 1%;
+}

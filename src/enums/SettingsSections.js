@@ -1,0 +1,6 @@
+export const SETTINGS_SECTIONS = {
+  ACCOUNT: "ACCOUNT",
+  BILLING: "BILLING",
+  PRICING: "PRICING",
+  HELP: "HELP",
+};

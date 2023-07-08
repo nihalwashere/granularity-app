@@ -1,0 +1,193 @@
+.question-box-root-container {
+  width: 100%;
+}
+
+.question-box-root-scrollable-container {
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.question-box-root-scrollable-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.question-box-root-scrollable-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.question-box-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.question-box-question-number {
+  font-family: Muli;
+  font-size: 24px;
+  color: #66b2b2;
+
+  width: 8%;
+}
+
+.question-box-question-container {
+  width: 95%;
+}
+
+.question-box-text-field-container {
+  width: 100%;
+  display: flex;
+}
+
+.question-box-text-field {
+  width: 100%;
+}
+
+.question-box-question-value {
+  font-size: 22px;
+  font-family: Muli;
+}
+
+.question-box-text-field .MuiInput-input {
+  border-color: #66b2b2;
+}
+
+.question-box-text-field .MuiInputBase-input {
+  font-size: 22px;
+  line-height: 30px;
+  font-family: Muli;
+}
+
+.question-box-description-text-field-container {
+  margin-top: 1%;
+  margin-bottom: 2%;
+
+  font-style: italic;
+
+  width: 100%;
+}
+
+.question-box-description-value {
+  font-size: 18px;
+  font-family: Muli;
+}
+
+.question-box-description-text-field {
+  width: 100%;
+}
+
+.question-box-description-text-field
+  .MuiOutlinedInput-root.Mui-focused
+  fieldset {
+  border-color: #66b2b2;
+}
+
+.question-box-description-text-field .MuiInputBase-input {
+  font-size: 18px;
+  line-height: 26px;
+  font-family: Muli;
+}
+
+.question-box-answer-text-field-container {
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+  width: 100%;
+}
+
+.question-box-answer-text-field {
+  width: 100%;
+}
+
+.question-box-answer-text-field .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #66b2b2;
+}
+
+.question-box-answer-text-field .MuiInputBase-input {
+  font-size: 28px;
+  line-height: 36px;
+  font-family: Muli;
+}
+
+.yes-no-container {
+  width: 200px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-text-field .MuiInput-underline:after {
+  border-bottom: 2px solid #66b2b2;
+}
+
+.question-box-drop-down-container {
+  margin-bottom: 2%;
+}
+
+.question-box-drop-down-input-select-field {
+  width: 100%;
+}
+
+.question-box-drop-down-input-select-field .MuiInputBase-input {
+  font-family: Muli;
+  font-size: 22px;
+}
+
+.question-box-drop-down-input-select-field .MuiInput-underline:after {
+  border-bottom: 2px solid #66b2b2;
+}
+
+.question-box-drop-down-add-options-button-list-count-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-box-multiple-choice-list {
+  margin-bottom: 2%;
+}
+
+.question-box-multiple-choice-item {
+  font-family: Muli;
+  font-size: 16px;
+}
+
+.question-box-answer-date-field-container {
+  margin-bottom: 2%;
+}
+
+.question-box-thank-you-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-box-validation-error-container {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: #ff0000;
+}
+
+.question-box-multiple-choice-checkbox.MuiCheckbox-colorSecondary.Mui-checked {
+  color: #66b2b2;
+}
+
+.question-box-button-container {
+  margin-top: 2%;
+}
+
+@media all and (max-width: 900px) {
+  .question-box-question-number {
+    width: 10%;
+  }
+
+  .question-box-answer-text-field-container {
+    margin-top: 5%;
+    margin-bottom: 8%;
+  }
+}

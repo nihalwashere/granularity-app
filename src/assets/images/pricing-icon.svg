@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Icon_ionic-ios-pricetags" width="22.552" height="22.547" data-name="Icon ionic-ios-pricetags" viewBox="0 0 22.552 22.547">
+    <defs>
+        <style>
+            .cls-1{fill:#cbcbcb}
+        </style>
+    </defs>
+    <path id="Path_698" d="M20.941 2.25h-5.95a.7.7 0 0 0-.493.206L2.658 14.342a1.4 1.4 0 0 0 0 1.973l5.613 5.663a1.5 1.5 0 0 0 2.185.106L22.129 10.39a.7.7 0 0 0 .206-.493V3.644a1.394 1.394 0 0 0-1.394-1.394zm-2.31 5.412A1.549 1.549 0 1 1 20 6.287a1.549 1.549 0 0 1-1.369 1.375z" class="cls-1" data-name="Path 698" transform="translate(-2.25 -2.25)"/>
+    <path id="Path_699" d="M26.8 5.646v5.724a.7.7 0 0 1-.206.493L13.549 24.911l.443.443a1.4 1.4 0 0 0 1.973 0l11.84-11.89a.7.7 0 0 0 .206-.493V7.025A1.4 1.4 0 0 0 26.8 5.646z" class="cls-1" data-name="Path 699" transform="translate(-5.46 -3.215)"/>
+</svg>

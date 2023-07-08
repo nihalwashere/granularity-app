@@ -1,0 +1,31 @@
+.preview-form-dialog-answer-form-root-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 3%;
+}
+
+.preview-form-dialog-answer-form-container-mobile-view {
+  width: 900px;
+}
+
+.preview-form-dialog-answer-form-container-desktop-view {
+  width: 100%;
+}
+
+.preview-form-dialog-is-mobile-switch-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 200px;
+}
+
+.preview-form-dialog-is-mobile-switch.MuiSwitch-root {
+  width: 80px;
+}
+
+.preview-form-dialog-is-mobile-switch .MuiSwitch-switchBase.Mui-checked {
+  width: 100%;
+}

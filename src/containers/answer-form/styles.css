@@ -1,0 +1,77 @@
+.answer-form-root-container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ffffff;
+
+  overflow: hidden;
+}
+
+.answer-form-container {
+  width: 60%;
+}
+
+.answer-form-bottom-actions-root-container {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+
+.answer-form-bottom-actions-container {
+  width: 370px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer-form-bottom-actions-button {
+  width: 140px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer-form-bottom-actions-root-container-mobile-preview-mode {
+  margin-top: 100px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.answer-form-bottom-actions-container-mobile-preview-mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+@media all and (max-width: 900px) {
+  .answer-form-container {
+    width: 80%;
+  }
+
+  .answer-form-bottom-actions-root-container {
+    margin-top: 100px;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .answer-form-bottom-actions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+}

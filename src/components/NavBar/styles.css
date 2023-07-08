@@ -1,0 +1,64 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fbfbfb;
+}
+
+.navbar-logo-text {
+  font-family: Muli;
+  font-weight: 900;
+  font-size: 24px;
+  color: #66b2b2;
+  margin-left: 1%;
+}
+
+.nav-actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-left: 3%;
+}
+
+.nav-action {
+  font-family: Muli;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.navbar-selected-section {
+  border-radius: 8px;
+  border: 3px solid #66b2b2;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+.navbar-left-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+}
+
+.navbar-right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+}
+
+.navbar-user-name {
+  font-family: Muli;
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 5%;
+}
+
+.nav-action-toggle-button-container {
+  margin-right: 2%;
+}

@@ -1,0 +1,194 @@
+.form-builder-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Left Section */
+
+.form-builder-left-section {
+  margin-top: 0.1%;
+  border-radius: 2px;
+
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fbfbfb;
+
+  min-height: 100vh;
+  height: 100%;
+  width: 20%;
+}
+
+.form-builder-left-scrollable-container {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.form-builder-left-scrollable-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.form-builder-left-scrollable-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.form-builder-left-section-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 3%;
+}
+
+.form-builder-left-section-header {
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-builder-left-section-questions-list {
+  margin-top: 5%;
+  margin-left: 3%;
+}
+
+.form-builder-left-section-question-container {
+  margin-bottom: 5%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-builder-left-section-question {
+  width: 90%;
+
+  font-family: Muli;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+/* Middle Section */
+
+.form-builder-middle-section {
+  min-height: 100vh;
+  height: 100%;
+  width: 60%;
+}
+
+.form-builder-middle-section-question-container {
+  margin: 5%;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Right Section */
+
+.form-builder-right-section {
+  margin-top: 0.1%;
+  border-radius: 2px;
+
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fbfbfb;
+
+  min-height: 100vh;
+  height: 100%;
+  width: 20%;
+}
+
+.form-builder-right-section-actions-container {
+  margin: 2%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-builder-right-section-header-container {
+  margin: 3%;
+}
+
+.form-builder-right-section-header {
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-builder-right-section-question-type-dropdown-container {
+  margin: 5% 3% 3%;
+}
+
+.form-builder-right-section-question-type-dropdown-header {
+  font-family: Muli;
+  font-size: 14px;
+
+  margin-bottom: 3%;
+}
+
+.form-builder-right-section-question-type-dropdown-input-select-field {
+  width: 95%;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 0.5px #cbcbcb;
+  font-size: 14px;
+  padding: 10px 26px 10px 12px;
+}
+
+.form-builder-right-section-question-type-dropdown-input-select-field
+  .MuiInputBase-root {
+  height: 40px;
+  font-family: Muli;
+}
+
+.form-builder-right-section-question-type-dropdown-input-select-field
+  .MuiOutlinedInput-root.Mui-focused
+  fieldset {
+  border-radius: 4px;
+  border-color: #66b2b2;
+}
+
+.form-builder-right-section-question-required-container {
+  margin: 10% 3% 3%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-builder-right-section-question-required-header {
+  font-family: Muli;
+  font-size: 14px;
+
+  margin-bottom: 3%;
+}
+
+.form-builder-required-switch .MuiSwitch-colorSecondary.Mui-checked {
+  color: #66b2b2;
+}
+
+.form-builder-required-switch
+  .MuiSwitch-colorSecondary.Mui-checked
+  + .MuiSwitch-track {
+  background-color: #66b2b2;
+}
+
+.form-builder-autosave-message-root-container {
+  position: fixed;
+  bottom: 0;
+
+  width: 20%;
+}
+
+.form-builder-autosave-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-builder-autosave-message {
+  font-family: Muli;
+  font-size: 15px;
+}

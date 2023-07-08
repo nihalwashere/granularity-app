@@ -1,0 +1,45 @@
+.signup-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 400px;
+}
+
+.signup-form-header {
+  width: 80%;
+
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  text-align: center;
+
+  font-family: Muli;
+  font-size: 20px;
+}
+
+.signup-have-an-account-container {
+  margin-top: 5%;
+
+  font-family: Muli;
+}
+
+.signup-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #66b2b2;
+}
+
+.signup-textfield .MuiOutlinedInput-input {
+  font-family: Muli;
+}
+
+.signup-textfield label.Mui-focused {
+  color: #66b2b2;
+}

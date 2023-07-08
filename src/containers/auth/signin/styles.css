@@ -1,0 +1,51 @@
+.signin-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 400px;
+}
+
+.signin-form-header {
+  width: 80%;
+
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  text-align: center;
+
+  font-family: Muli;
+  font-size: 24px;
+}
+
+.signin-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #66b2b2;
+}
+
+.signin-textfield .MuiOutlinedInput-input {
+  font-family: Muli;
+}
+
+.signin-textfield label.Mui-focused {
+  color: #66b2b2;
+}
+
+.signin-bottom-actions-container {
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 8%;
+
+  font-family: Muli;
+}

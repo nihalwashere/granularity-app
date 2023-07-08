@@ -1,0 +1,68 @@
+.insights-root-container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+
+  background-color: #f0f0f0b3;
+}
+
+.insights-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.insights-overview-container {
+  width: 80%;
+  margin-top: 2%;
+}
+
+.insights-overview-header {
+  font-family: Muli;
+  font-size: 24px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.insights-overview-stats-container {
+  width: 50%;
+
+  margin-top: 2%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insights-overview-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.insights-overview-stat-header {
+  font-family: Muli;
+  font-size: 16px;
+}
+
+.insights-overview-stat-value {
+  font-family: Muli;
+  font-size: 32px;
+}
+
+.insights-question-container {
+  width: 80%;
+
+  margin-top: 3%;
+}
+
+.insights-question-header {
+  font-family: Muli;
+  font-size: 24px;
+}
+
+.insights-question-table-container {
+  margin-top: 2%;
+  margin-bottom: 10%;
+}

@@ -1,0 +1,67 @@
+.account-root-container {
+  margin: 1%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.account-container {
+  width: 70%;
+}
+
+.account-header {
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: bold;
+
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.account-name-avatar-card-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 30%;
+
+  margin-bottom: 5%;
+}
+
+.account-name-card-container {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-bottom: 5%;
+}
+
+.account-name {
+  font-family: Muli;
+  font-size: 18px;
+
+  text-align: left;
+
+  margin-left: 8%;
+}
+
+.email-card-container {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-bottom: 5%;
+}
+
+.email-text {
+  font-family: Muli;
+  font-size: 18px;
+}
+
+.email-verified-text {
+  font-family: Muli;
+  font-size: 16px;
+  color: #439b73;
+}
+
+.email-unverified-text {
+  font-family: Muli;
+  font-size: 16px;
+  color: #c73030;
+}

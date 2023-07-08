@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "ProductSans";
+  src: local("ProductSans"), local("ProductSans"),
+    url("./assets/fonts/ProductSans/Product\ Sans\ Regular.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Muli";
+  src: local("Muli"), local("Muli"),
+    url("./assets/fonts/Muli/Muli.ttf") format("truetype");
+}
+
+body {
+  margin: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.input-text-field {
+  border-radius: 4px;
+  border: solid 0.5px #cbcbcb;
+  background-color: #ffffff;
+}
+
+.input-text-field .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #66b2b2;
+}
+
+.input-text-field .MuiOutlinedInput-input {
+  height: 10px;
+  font-family: Muli;
+}
+
+.input-multiline-text-field {
+  border-radius: 4px;
+  border: solid 0.5px #cbcbcb;
+  background-color: #ffffff;
+}
+
+.input-multiline-text-field .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #66b2b2;
+}
+
+.input-multiline-text-field .MuiOutlinedInput-multiline {
+  font-family: Muli;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 5%;
+}
+
+.command-text {
+  padding: 2px 3px 1px;
+  border: 1px solid var(--saf-0);
+  border-radius: 3px;
+  background-color: rgba(29, 28, 29, 0.04);
+  background-color: rgba(var(--sk_foreground_min, 29, 28, 29), 0.04);
+  color: #e01e5a;
+}
+
+.command-block {
+  --saf-0: rgba(var(--sk_foreground_low, 29, 28, 29), 0.13);
+  font-family: Monaco, Menlo, Consolas, Courier New, monospace !important;
+  font-size: 16px;
+  line-height: 1.50001;
+  -webkit-font-feature-settings: none;
+  font-feature-settings: none;
+  -webkit-font-variant-ligatures: none;
+  font-variant-ligatures: none;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: normal;
+  -webkit-tab-size: 4;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.password-atleast-chars-requirement-text {
+  font-family: Muli;
+  font-size: 12px;
+  color: #8e8e8e;
+}

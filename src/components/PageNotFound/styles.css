@@ -1,0 +1,27 @@
+.page-not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.page-not-found-text {
+  font-family: Muli;
+  font-weight: 900;
+  font-size: 36px;
+}
+
+.page-not-found-description-text {
+  font-family: Muli;
+  font-weight: 900;
+  font-size: 24px;
+  margin-top: 2%;
+}
+
+.page-not-found-illustration-container {
+  width: 30%;
+  height: 30%;
+
+  margin-top: 3%;
+}

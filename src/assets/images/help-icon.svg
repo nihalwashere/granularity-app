@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.842" height="19.842" viewBox="0 0 19.842 19.842">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#cbcbcb;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="Icon_feather-help-circle" data-name="Icon feather-help-circle" transform="translate(1 1)">
+        <path id="Path_700" d="M20.842 11.921A8.921 8.921 0 1 1 11.921 3a8.921 8.921 0 0 1 8.921 8.921z" class="cls-1" data-name="Path 700" transform="translate(-3 -3)"/>
+        <path id="Path_701" d="M13.635 12.281a2.676 2.676 0 0 1 5.2.892c0 1.784-2.676 2.676-2.676 2.676" class="cls-1" data-name="Path 701" transform="translate(-7.31 -6.037)"/>
+    </g>
+</svg>
